@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+.fit-img {
+    object-fit: cover;
+    overflow: hidden;
+    height: 10vh;
+    object-position: center;
+}
+
+.overlay {
+    background: linear-gradient(140deg, #0808084d, #05050579);
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #E2C448, #BF8944);
+    /* Change background color if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Ensure the preloader appears on top */
+}
+
+/* Loader styles */
+.loader {
+    background: linear-gradient(180deg, #2A1F0D, #332f29);
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+    /* Apply animation */
+}
+
+.loader img {
+    height: 129px;
+}
+
+
+/* Keyframe animation for loader */
+@keyframes spin {
+    0% {
+        transform: scale(.95);
+    }
+
+    25% {
+        transform: scale(1.05);
+    }
+
+    50% {
+        transform: scale(.95);
+    }
+
+    75% {
+        transform: scale(.1.05);
+    }
+
+    100% {
+        transform: scale(.95);
+    }
+}
+
+/* Hide the content until the page is fully loaded */
+.content {
+    display: none;
+}
+
+/* Show the content after the page is fully loaded */
+.loaded .content {
+    display: block;
+}
+
+/* Slider styles */
+.slider {
+    position: relative;
+    width: 100%;
+    /* Adjust the width of the slider */
+    margin: 0 auto;
+    overflow: hidden;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+    /* Smooth sliding transition */
+}
+
+.slides img {
+    width: 100%;
+    height: auto;
+}
+
+/* Button styles */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Dots styles */
+.dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #444;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #BF8944;
+}
+
+.card {
+    border: none;
+}
+
+.skip {
+    text-align: right;
+    margin: 30px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.top-bar {
+    height: 100px;
+    width: 100%;
+    padding: 10px;
+}
+
+.left-side {
+    float: left;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.left-side img {
+    float: left;
+    margin: 5px;
+    height: 60px;
+    width: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    overflow: hidden;
+    object-position: center;
+}
+
+.right-side {
+    float: right;
+    cursor: pointer;
+}
+
+.search-bar input {
+    padding: 10px;
+}
+
+.search-bar .menu-btn {
+    background: linear-gradient(180deg, #E2C448, #BF8944);
+    font-size: 20px;
+    padding: 6px;
+    text-align: center;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.form-control:focus {
+    border-color: #ccc;
+    box-shadow: 0 0 0 0 transparent;
+}
+
+/* Custom styles for the carousel items */
+.owl-carousel {
+    display: flex;
+    border-radius: 10px;
+}
+
+.item img {
+    object-fit: cover;
+    overflow: hidden;
+    height: 17vh;
+    object-position: center;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border: none;
+}
+
+input:focus {
+    border-color: none;
+    outline: none;
+}
+
+.social-links ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.social-links ul li {
+    display: inline-block;
+    width: 50px;
+}
+
+.social-links ul li a {
+    color: #BF8944;
+    text-align: center;
+    font-size: 22px;
+}
+
+.footer-menu {
+    height: 10vh;
+    background: #fff;
+    border-top: #ccccccaf solid 1px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.footer-menu a {
+    text-decoration: none;
+    color: #222;
+    font-size: 13px;
+    text-align: center;
+}
+
+.sidebar {
+    width: 60%;
+    background: linear-gradient(180deg, #E2C448, #BF8944);
+    color: white;
+    position: absolute;
+    left: -60%;
+    height: 80vh;
+    display: flex;
+    justify-content: left;
+    transition: 1s;
+    z-index: 2;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.sidebar-show {
+    transition: 1s;
+    left: 0;
+    z-index: 2;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    padding-top: 20px;
+}
+
+.sidebar ul li {
+    padding-left: 15px;
+    padding-top: 40px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.sidebar .cross {
+    position: absolute;
+    right: 0px;
+    font-size: 20px;
+    /* background: linear-gradient(180deg, #E2C448, #BF8944); */
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.form-check-input:checked+.form-check-label {
+    color: #BF8944;
+}
+
+.event-detail button {
+    color: #222;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+}
+
+.event-detail .btn-left {
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    font-weight: 500;
+    color: #222;
+}
+
+.event-detail .btn-right {
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    color: #222;
+    font-weight: 500;
+}
+
+.event-detail button.active-left {
+    background: linear-gradient(180deg, #E2C448, #BF8944);
+    color: #fff;
+}
+
+.event-detail button.active-right {
+    background: linear-gradient(180deg, #E2C448, #BF8944);
+    color: #fff;
+}
+
+.details,
+.description {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.visible {
+    display: block;
+}
